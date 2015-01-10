@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 Games
+  #games
+    for game, i in games
+      a(href="/game/#{i}")
+        .game
+          .info= game.period + " " + game.time
+          for team in game.teams
+            .team= team.abbreviation + " " + team.score

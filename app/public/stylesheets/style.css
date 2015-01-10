@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.game {
+  border: 1px solid black;
+  padding: 6px;
+}
+.info {
+  background-color: #ccc;
+}

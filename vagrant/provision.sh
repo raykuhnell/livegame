@@ -13,3 +13,9 @@ add-apt-repository -y ppa:chris-lea/node.js
 apt-get -y update
 apt-get -y install nodejs
 npm update -g npm
+
+# Install Bower
+npm install -g bower
+
+# Install Grunt
+npm install -g grunt-cli

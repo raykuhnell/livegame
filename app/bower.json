@@ -1,0 +1,21 @@
+{
+  "name": "livegame",
+  "version": "0.0.0",
+  "authors": [
+    "Ray Kuhnell"
+  ]
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.8",
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.3"
+  }
+}
