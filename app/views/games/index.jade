@@ -8,4 +8,4 @@ block content
         .game
           .info= game.period + " " + game.time
           for team in game.teams
-            .team= team.abbreviation + " " + team.score
+            .team(style="background-color:team.color;")= team.abbreviation + " " + team.score

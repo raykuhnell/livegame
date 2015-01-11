@@ -1,0 +1,13 @@
+.root {
+  padding-top: 40px;
+}
+.game {
+  border: 1px solid black;
+  margin: 0px 6px;
+  padding: 6px;
+  width: 90px;
+  float: left;
+}
+.info {
+  background-color: #ddd;
+}

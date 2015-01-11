@@ -14,8 +14,7 @@ apt-get -y update
 apt-get -y install nodejs
 npm update -g npm
 
-# Install Bower
+# Install Global NPM Packages
 npm install -g bower
-
-# Install Grunt
 npm install -g grunt-cli
+npm install -g nodemon
