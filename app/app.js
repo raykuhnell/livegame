@@ -27,12 +27,12 @@ app.use('/', routes);
 app.use('/users', users);
 
 // Games
-app.get('/games', games.list);
-app.all('/game/:id/:op?', games.load);
-app.get('/game/:id', games.view);
-app.get('/game/:id/view', games.view);
-app.get('/game/:id/edit', games.edit);
-app.put('/game/:id/edit', games.update);
+app.get('/api/games', games.list);
+app.all('/api/game/:id/:op?', games.load);
+app.get('/api/game/:id', games.view);
+app.get('/api/game/:id/view', games.view);
+app.get('/api/game/:id/edit', games.edit);
+app.put('/api/game/:id/edit', games.update);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,7 +2,7 @@
 var games = require('../testdata.js');
 
 exports.list = function(req, res){
-  res.render('games', { title: 'Games', games: games });
+  res.send(games);
 };
 
 exports.load = function(req, res, next){

@@ -1,8 +1,8 @@
 doctype html
-html
+html(ng-app='livegame')
   head
     title= title
-    link(rel='stylesheet', href='/css/vendor/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
   body
     nav.navbar.navbar-inverse.navbar-fixed-top
@@ -20,5 +20,5 @@ html
                 a(href='/games') Games
     .root.container
       block content
-    script(src='/scripts/vendor/jquery.min.js')
-    script(src='/scripts/vendor/angular.min.js')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/angular/angular.min.js')

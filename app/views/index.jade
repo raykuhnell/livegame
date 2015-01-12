@@ -1,5 +1,6 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(ng-controller='IndexController')
+    div(ng-repeat='game in games')
+      .team(ng-repeat='team in game.teams' style="background-color:{{team.color}};") {{team.abbreviation}} {{team.score}}

@@ -1,6 +1,7 @@
 exports = module.exports = [
   {
     "id": 1,
+    "sport": "Basketball",
     "teams": [
       {
         "name": "Indiana Pacers",
@@ -32,6 +33,7 @@ exports = module.exports = [
   },
   {
     "id": 2,
+    "sport": "Basketball",
     "teams": [
     {
       "name": "Cleveland Cavaliers",
