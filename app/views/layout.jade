@@ -5,7 +5,7 @@ html(ng-app='livegame')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
   body
-    nav.navbar.navbar-inverse.navbar-fixed-top
+    nav.navbar.navbar-inverse
       .container
           .navbar-header
             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
@@ -20,7 +20,9 @@ html(ng-app='livegame')
                 a(href='/games') Games
     .root.container
       block content
-    script(src='/bower_components/jquery/dist/jquery.min.js')
-    script(src='/bower_components/angular/angular.min.js')
-    script(src='/bower_components/angular-route/angular-route.min.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src='/bower_components/angular/angular.js')
+    script(src='/bower_components/angular-route/angular-route.js')
     script(src='/app/app.js')
+    script(src='/app/controllers/games.js')
+    script(src='/app/controllers/game.js')

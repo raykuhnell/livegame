@@ -19,10 +19,7 @@ exports.load = function(req, res, next){
 };
 
 exports.view = function(req, res){
-  res.render('games/view', {
-    title: req.game.teams[0].name + ' vs. ' + req.games.teams[1].name,
-    game: req.game
-  });
+  res.send(games[0]);
 };
 
 exports.edit = function(req, res){

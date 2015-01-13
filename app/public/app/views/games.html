@@ -1,5 +1,6 @@
-<div ng-repeat="game in games">
+<div class="game" ng-repeat="game in games">
   <div class="team" ng-repeat="team in game.teams" style="background-color:{{team.color}};">
     {{team.abbreviation}} {{team.score}}
   </div>
+  <a href="#/game/{{game.id}}">View Game</a>
 </div>

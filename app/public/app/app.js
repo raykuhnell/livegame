@@ -1,10 +1,14 @@
 angular.module('livegame', [
-  'ngRoute',
-  'livegame.controllers'
+  'ngRoute'
 ]).config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-  when('/', {
-    templateUrl: 'views/games.html',
+  var viewPath = '/app/views/';
+  $routeProvider
+  .when('/', {
+    templateUrl: viewPath + 'games.html',
     controller: 'GamesController'
+  })
+  .when('/games/:gameId', {
+    controller: 'GameController',
+    templateUrl: viewPath + 'game.html'
   });
 }]);
