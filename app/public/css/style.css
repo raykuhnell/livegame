@@ -8,3 +8,6 @@
 .info {
   background-color: #ddd;
 }
+.game-detail .score-table td {
+  padding: 8px;
+}

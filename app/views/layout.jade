@@ -1,5 +1,6 @@
 doctype html
 html(ng-app='livegame')
+  base(href='/')
   head
     title= title
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
@@ -13,11 +14,11 @@ html(ng-app='livegame')
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand(href='#') livegame
+            a.navbar-brand(href='#/') livegame
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav
               li
-                a(href='/games') Games
+                a(href='#/') Games
     .root.container
       block content
     script(src='/bower_components/jquery/dist/jquery.js')

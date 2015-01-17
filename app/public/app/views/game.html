@@ -1,8 +1,10 @@
-<div class="game">
-  {{game.period}} {{game.time}}
-  <div class="team" ng-repeat="team in game.teams" style="background-color:{{team.color}};">
-    {{team.name}} {{team.score}}
-    <table>
+<div class="game-detail">
+  <div class="info">
+    {{game.period}} {{game.time}}
+  </div>
+  <div class="team" ng-repeat="team in game.teams">
+    {{team.name}}
+    <table class="score-table">
       <tr>
         <td ng-repeat="period in team.periods">
           {{period.name}}
@@ -16,5 +18,10 @@
         <td>{{team.score}}</td>
       </tr>
     </table>
+  </div>
+  <div class="plays" ng-repeat="play in game.plays">
+    <div class="play">
+      {{play.time}} - {{play.description}}
+    </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ angular.module('livegame', [
     templateUrl: viewPath + 'games.html',
     controller: 'GamesController'
   })
-  .when('/games/:gameId', {
+  .when('/game/:gameId', {
     controller: 'GameController',
     templateUrl: viewPath + 'game.html'
   });
