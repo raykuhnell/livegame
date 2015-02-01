@@ -1,6 +1,8 @@
 // Use test data for now.  This will come from MongoDB later.
 var games = require('../testdata.js');
 
+
+
 exports.list = function(req, res){
   res.send(games);
 };

@@ -1,0 +1,8 @@
+var mongoose = require('mongoose');
+
+var playSchema = new mongoose.Schema({
+    time: String,
+    description: String
+});
+
+module.exports = mongoose.model('Play', playSchema);

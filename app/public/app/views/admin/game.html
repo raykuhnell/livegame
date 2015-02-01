@@ -1,0 +1,54 @@
+<div class="form-group">
+    <label for="hometeam">Home Team</label>
+    <select name="hometeam" ng-repeat="team in teams">
+        <option value="{{team.id}}">{{team.name}}</option>
+    </select>
+</div>
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>OT</td>
+    </tr>
+    <tr>
+        <td><input type="text" name="hometeam-1" value="{{team.periods[0].score}}" /></td>
+        <td><input type="text" name="hometeam-1" value="{{team.periods[1].score}}" /></td>
+        <td><input type="text" name="hometeam-1" value="{{team.periods[2].score}}" /></td>
+        <td><input type="text" name="hometeam-1" value="{{team.periods[3].score}}" /></td>
+        <td><input type="text" name="hometeam-1" value="{{team.periods[4].score}}" /></td>
+    </tr>
+</table>
+<div class="form-group">
+    <label for="awayteam">Away Team</label>
+    <select name="awayteam" ng-repeat="team in teams">
+        <option value="{{team.id}}">{{team.name}}</option>
+    </select>
+</div>
+<h2>Plays</h2>
+<div class="form-group">
+    <label for="period">Period</label>
+    <select name="period">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="OT">OT</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="time">Time</label>
+    <input type="text" name="time" />
+</div>
+<div class="form-group">
+    <label for="action">Action</label>
+    <input type="text" name="action" />
+</div>
+<table>
+    <tr ng-repeat="play in plays">
+        <td>{{play.period}}</td>
+        <td>{{play.time}}</td>
+        <td>{{play.action}}</td>
+    </tr>
+</table>
