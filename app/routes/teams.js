@@ -1,9 +1,9 @@
-var GameModel = require('../models/game.js');
+var TeamModel = require('../models/team.js');
 
 exports.list = function(req, res) {
-  return GameModel.find(function (err, games) {
+  return TeamModel.find(function (err, teams) {
     if (!err) {
-      return res.send(games);
+      return res.send(teams);
     } else {
       return console.log(err);
     }
@@ -11,23 +11,25 @@ exports.list = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  var game = new GameModel({
+  var team = new TeamModel({
     name: req.body.name,
+    abbreviation: req.body.abbreviation,
+    color: req.body.color,
   });
-  game.save(function (err) {
+  team.save(function (err) {
     if (!err) {
       return console.log("created");
     } else {
       return console.log(err);
     }
   });
-  return res.send(game);  
+  return res.send(team);  
 };
 
 exports.read = function(req, res) {
-  return GameModel.findById(req.params.id, function (err, game) {
+  return TeamModel.findById(req.params.id, function (err, team) {
     if (!err) {
-      return res.send(game);
+      return res.send(team);
     } else {
       return console.log(err);
     }
@@ -35,22 +37,24 @@ exports.read = function(req, res) {
 };
 
 exports.update = function(req, res) {
-  return GameModel.findById(req.params.id, function (err, game) {
-    game.name = req.body.name;
-    return game.save(function (err) {
+  return TeamModel.findById(req.params.id, function (err, team) {
+    team.name = req.body.name;
+    team.abbreviation = req.body.abbreviation;
+    team.color = req.body.color;
+    return team.save(function (err) {
       if (!err) {
         console.log("updated");
       } else {
         console.log(err);
       }
-      return res.send(game);
+      return res.send(team);
     });
   });
 };
 
 exports.delete = function(req, res) {
-  return GameModel.findById(req.params.id, function (err, game) {
-    return game.remove(function (err) {
+  return TeamModel.findById(req.params.id, function (err, team) {
+    return team.remove(function (err) {
       if (!err) {
         console.log("removed");
         return res.send('');

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var games = require('./routes/games');
+var teams = require('./routes/teams');
 
 var app = express();
 
@@ -28,11 +29,24 @@ app.use('/users', users);
 
 // Games
 app.get('/api/games', games.list);
-app.all('/api/game/:id/:op?', games.load);
-app.get('/api/game/:id', games.view);
-app.get('/api/game/:id/view', games.view);
-app.get('/api/game/:id/edit', games.edit);
-app.put('/api/game/:id/edit', games.update);
+app.post('/api/game', game.create);
+app.get('/api/game/:id', games.read);
+app.put('/api/game/:id/update', games.update);
+app.delete('/api/game/:id/delete', games.delete);
+
+// Teams
+app.get('/api/teams', teams.list);
+app.post('/api/team', teams.create);
+app.get('/api/team/:id', teams.read);
+app.put('/api/team/:id/update', teams.update);
+app.delete('/api/team/:id/delete', teams.delete);
+
+// Plays
+app.get('/api/plays', teams.list);
+app.post('/api/play', teams.create);
+app.get('/api/play/:id', teams.read);
+app.put('/api/play/:id/update', teams.update);
+app.delete('/api/play/:id/delete', teams.delete);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -65,5 +79,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
+mongoose.connect('mongodb://localhost/test');
 
 module.exports = app;

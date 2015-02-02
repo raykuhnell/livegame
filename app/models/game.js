@@ -4,9 +4,7 @@ var gameSchema = new mongoose.Schema({
     sport: String,
     team: [
         {
-            team: {type: Schema.Types.ObjectId, ref: 'Team' }
-            abbreviation: String,
-            color: String,
+            info: {type: Schema.Types.ObjectId, ref: 'Team' }
             score: String,
             periods: [
                 {
@@ -17,8 +15,7 @@ var gameSchema = new mongoose.Schema({
         }
     ],
     period: String,
-    time: String,
-    plays: [{type: Schema.Types.ObjectId, ref: 'Play' }]
+    time: String
 });
 
 module.exports = mongoose.model('Game', gameSchema);
