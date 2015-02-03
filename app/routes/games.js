@@ -1,7 +1,7 @@
 var GameModel = require('../models/game.js');
 
 exports.list = function(req, res) {
-  return GameModel.find(function (err, games) {
+  return GameModel.find().populate('team.info').populate('plays').exec(function (err, games) {
     if (!err) {
       return res.send(games);
     } else {
@@ -25,7 +25,7 @@ exports.create = function(req, res) {
 };
 
 exports.read = function(req, res) {
-  return GameModel.findById(req.params.id, function (err, game) {
+  return GameModel.findById(req.params.id).populate('team.info').populate('plays').exec(function (err, game) {
     if (!err) {
       return res.send(game);
     } else {
@@ -49,7 +49,7 @@ exports.update = function(req, res) {
 };
 
 exports.delete = function(req, res) {
-  return GameModel.findById(req.params.id, function (err, game) {
+  return GameModel.findById(req.params.id).populate('team.info').populate('plays').exec(function (err, game) {
     return game.remove(function (err) {
       if (!err) {
         console.log("removed");

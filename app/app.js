@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var games = require('./routes/games');
@@ -29,7 +31,7 @@ app.use('/users', users);
 
 // Games
 app.get('/api/games', games.list);
-app.post('/api/game', game.create);
+app.post('/api/game', games.create);
 app.get('/api/game/:id', games.read);
 app.put('/api/game/:id/update', games.update);
 app.delete('/api/game/:id/delete', games.delete);
